@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾 CRUD Mascotas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐾 Gestión de Mascotas</h1>
+            <p>Sistema CRUD completo con Node.js, Express y MariaDB</p>
+        </header>
+
+        <!-- Formulario para registrar/actualizar mascotas -->
+        <section class="form-section">
+            <h2 id="form-title">➕ Registrar Nueva Mascota</h2>
+            <form id="form-mascota">
+                <input type="hidden" id="mascota-id">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" placeholder="Ej: Max" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo">Tipo:</label>
+                    <select id="tipo" required>
+                        <option value="">Selecciona un tipo</option>
+                        <option value="Perro">Perro</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Ave">Ave</option>
+                        <option value="Conejo">Conejo</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" placeholder="Ej: 3" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="raza">Raza:</label>
+                    <input type="text" id="raza" placeholder="Ej: Golden Retriever">
+                </div>
+
+                <div class="form-group">
+                    <label for="dueno">Dueño:</label>
+                    <input type="text" id="dueno" placeholder="Ej: Juan Pérez" required>
+
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="btn-submit">Guardar</button>
+                    <button type="button" id="btn-cancel" style="display: none;">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Tabla de mascotas registradas -->
+        <section class="table-section">
+            <h2>📋 Lista de Mascotas</h2>
+            <div class="table-container">
+                <table id="tabla-mascotas">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Edad</th>
+                            <th>Raza</th>
+                            <th>Dueño</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-mascotas">
+                        <!-- Las filas se cargarán dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="mensaje-vacio" style="display: none; text-align: center; color: #666;">
+                No hay mascotas registradas
+            </p>
+        </section>
+    </div>
+
+    <!-- Script principal -->
+    <script src="script.js"></script>
+</body>
+</html>

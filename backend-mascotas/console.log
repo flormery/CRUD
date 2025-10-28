@@ -1,0 +1,4 @@
+router.post('/', (req, res) => {
+    console.log('📦 Mascota recibida:', req.body);
+    ...
+});
