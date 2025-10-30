@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 app.use('/api/mascotas', mascotasRoutes);
 
 // Iniciar el servidor
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`\n🚀 Servidor corriendo en http://localhost:${PORT}`);
     console.log(`📡 API disponible en http://localhost:${PORT}/api/mascotas\n`);
 });
